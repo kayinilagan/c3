@@ -41,29 +41,48 @@ body {
 
 #app {
     width: 80%;
-    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -75%);
 }
 
 #main-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
+    border: 1px solid #121212;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#main-grid > div {
+    border: 1px solid #121212;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 2.5px;
+}
+
+#main-grid > div:hover {
+    border: 3px solid #9D00FF;
+    margin: -1px;
+}
+
+#main-grid div {
+    display: block;
 }
 
 #main-grid__name {
-    background-color: burlywood;
     grid-column-start: 1;
     grid-column-end: 2;
 }
 
 #main-grid__background {
-    background-color: indianred;
     grid-column-start: 2;
     grid-column-end: 3;
 }
 
 #main-grid__inventory {
-    background-color: lightseagreen;
     grid-column-start: 3;
     grid-column-end: 4;
     grid-row-start: 1;
@@ -71,7 +90,6 @@ body {
 }
 
 #main-grid__petty {
-    background-color: lightskyblue;
     grid-column-start: 4;
     grid-column-end: 5;
     grid-row-start: 1;
@@ -79,19 +97,16 @@ body {
 }
 
 #main-grid__stats {
-    background-color: lightcoral;
     grid-column-start: 1;
     grid-column-end: 3;
 }
 
 #main-grid__actions {
-    background-color: lightgreen;
     grid-column-start: 1;
     grid-column-end: 5;
 }
 
 #main-grid__activity-log {
-    background-color: lightpink;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 4;
@@ -99,22 +114,30 @@ body {
 }
 
 #main-grid__bonds {
-    background-color: lightgoldenrodyellow;
     grid-row-start: 4;
     grid-row-end: 6;
 }
 
 #main-grid__omens {
-    background-color: orange;
     grid-row-start: 4;
     grid-row-end: 6;
 }
 
+.div-label {
+    color: #444444;
+}
 
+.div-content {
+
+}
 
 .dark-mode {
     background-color: #121212;
     color: #ffffff;
+}
+
+.button-text{
+    cursor: pointer
 }
 
 
