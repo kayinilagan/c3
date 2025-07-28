@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+
+#main-grid div {
+    display: inline-block;
+}
+
+#banner {
+    border-bottom: 1px solid #121212;
+    width: 100%;
+}
+
+body {
+    margin: 0;
+    background-color: #ffffff;
+    color: #121212;
+}
+
+#banner__content {
+    padding-left: 10px;
+    display: inline-block;
+    font-family: 'Roboto', sans-serif;
+    color: #121212;
+    text-align: center;
+    width: 97%;
+}
+
+#banner__buttons {
+    display: inline;
+    text-align: right;
+    width: 3%;
+}
+
+#banner__dark-mode-button {
+    display: inline-block;
+    text-align: right;
+    font-family: 'Roboto', sans-serif;
+    color: #121212;
+}
+
+#app {
+    width: 80%;
+    margin: 0 auto;
+}
+
+#main-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+}
+
+#main-grid__name {
+    background-color: burlywood;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+#main-grid__background {
+    background-color: indianred;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
+
+#main-grid__inventory {
+    background-color: lightseagreen;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#main-grid__petty {
+    background-color: lightskyblue;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+#main-grid__stats {
+    background-color: lightcoral;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#main-grid__actions {
+    background-color: lightgreen;
+    grid-column-start: 1;
+    grid-column-end: 5;
+}
+
+#main-grid__activity-log {
+    background-color: lightpink;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+#main-grid__bonds {
+    background-color: lightgoldenrodyellow;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+#main-grid__omens {
+    background-color: orange;
+    grid-row-start: 4;
+    grid-row-end: 6;
+}
+
+
+
+.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+
+
+/* https://www.vev.design/blog/dark-mode-website-color-palette/ - Monochromatic Minimalism */
