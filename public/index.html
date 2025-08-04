@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
      <link rel="stylesheet" href="css/main.css">
+     <script src="js/main.js"></script>
     <title>C3</title>
 </head>
 <body>
@@ -16,31 +17,34 @@
 
     <div id="app">
         <div id="main-grid">
-            <div id="main-grid__name" class="button-text">
-                <div class="div-label"> Name </div>
+            <div id="main-grid__name" class="button-text" onclick="setName()">
+                <div class="div-label" > Name </div>
                 <div class="div-content"> Content </div>
             </div>
-            <div id="main-grid__background"  class="button-text">
+            <div id="main-grid__background"  class="button-text" onclick="setBackground()">
                 <div class="div-label"> Background </div>
                 <div class="div-content"> Content </div></div>
-            <div id="main-grid__inventory"  class="button-text">
+            <div id="main-grid__inventory"  class="button-text" onclick="setInventory()">
                 <div class="div-label"> Inventory </div>
                 <div class="div-content"> Content </div>
             </div>
-            <div id="main-grid__petty"  class="button-text">
+            <div id="main-grid__petty"  class="button-text" onclick="setPetty()">
                 <div class="div-label"> Petty </div>
                 <div class="div-content"> Content </div>
             </div>
-            <div id="main-grid__stats"  class="button-text">
+            <div id="main-grid__stats"  class="button-text" onclick="setStats()">
                 <div class="div-label"> Stats </div>
                 <div class="div-content"> Content </div>
             </div>
-            <div id="main-grid__actions"  class="button-text"> Actions </div>
             <div id="main-grid__activity-log"  class="button-text"> Log </div>
-            <div id="main-grid__bonds"  class="button-text"> Bonds </div>
-            <div id="main-grid__omens"  class="button-text"> Omens </div>
+            <div id="main-grid__bonds"  class="button-text" onclick="setBonds()"> Bonds </div>
+            <div id="main-grid__omens"  class="button-text" onclick="setOmens()"> Omens </div>
+            <div id="main-grid__actions"  class="button-text"> Actions </div>
         </div>
     </div>
 
+    <dialog id="name-dialog" class="dialog">
+        <p>Dialog</p>
+    </dialog>
 </body>
 </html>

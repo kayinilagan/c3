@@ -7,7 +7,6 @@
 }
 
 #banner {
-    border-bottom: 1px solid #121212;
     width: 100%;
 }
 
@@ -51,13 +50,14 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
-    border: 1px solid #121212;
+    border: 0;
+    box-shadow: 0 0 1em 0 rgba(0 0 0 / 0.3);
     border-radius: 5px;
     padding: 5px;
 }
 
 #main-grid > div {
-    border: 1px solid #121212;
+    border: 1px solid #B0B0B0;
     border-radius: 5px;
     padding: 5px;
     margin: 2.5px;
@@ -109,18 +109,18 @@ body {
 #main-grid__activity-log {
     grid-column-start: 1;
     grid-column-end: 3;
-    grid-row-start: 4;
-    grid-row-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 5;
 }
 
 #main-grid__bonds {
-    grid-row-start: 4;
-    grid-row-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 5;
 }
 
 #main-grid__omens {
-    grid-row-start: 4;
-    grid-row-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 5;
 }
 
 .div-label {
