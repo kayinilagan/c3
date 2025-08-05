@@ -19,7 +19,7 @@
         <div id="main-grid">
             <div id="main-grid__name" class="button-text" onclick="setName()">
                 <div class="div-label" > Name </div>
-                <div class="div-content"> Content </div>
+                <div id="name-content" class="div-content"> Content </div>
             </div>
             <div id="main-grid__background"  class="button-text" onclick="setBackground()">
                 <div class="div-label"> Background </div>
@@ -36,7 +36,7 @@
                 <div class="div-label"> Stats </div>
                 <div class="div-content"> Content </div>
             </div>
-            <div id="main-grid__activity-log"  class="button-text"> Log </div>
+            <div id="main-grid__activity-log"  class="button-text" onclick="seeLogs()"> Log </div>
             <div id="main-grid__bonds"  class="button-text" onclick="setBonds()"> Bonds </div>
             <div id="main-grid__omens"  class="button-text" onclick="setOmens()"> Omens </div>
             <div id="main-grid__actions"  class="button-text"> Actions </div>
@@ -44,7 +44,116 @@
     </div>
 
     <dialog id="name-dialog" class="dialog">
-        <p>Dialog</p>
+        <form>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name">
+                <input id="name-submit" type="button" value="Submit">
+                <button id="name-cancel-button">Cancel</button>
+            </div>
+        </form>
     </dialog>
+
+    <dialog id="background-dialog" class="dialog">
+        <form>
+            <div>
+                <label for="background">Background</label>
+                <input type="text" id="background" name="background" placeholder="Background">
+                <input type="submit" value="Submit">
+                <button id="background-cancel-button">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="inventory-dialog" class="dialog">
+        <form>
+            <div>
+                <label for="inv-slot-1">Inventory</label>
+                <input type="text" id="inv-slot-1" name="inv-slot-1" placeholder="Slot 1">
+                <input type="text" id="inv-slot-2" name="inv-slot-2" placeholder="Slot 2">
+                <input type="text" id="inv-slot-3" name="inv-slot-3" placeholder="Slot 3">
+                <input type="text" id="inv-slot-4" name="inv-slot-4" placeholder="Slot 4">
+                <input type="text" id="inv-slot-5" name="inv-slot-5" placeholder="Slot 5">
+                <input type="text" id="inv-slot-6" name="inv-slot-6" placeholder="Slot 6">
+                <input type="text" id="inv-slot-7" name="inv-slot-7" placeholder="Slot 7">
+                <input type="text" id="inv-slot-8" name="inv-slot-8" placeholder="Slot 8">
+                <input type="text" id="inv-slot-9" name="inv-slot-9" placeholder="Slot 9">
+                <input type="text" id="inv-slot-10" name="inv-slot-10" placeholder="Slot 10">
+                <input type="submit" value="Submit">
+                <button id="inventory-cancel-button">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="petty-dialog" class="dialog">
+        <form>
+            <div>
+                <label for="petty-slot-1">Petty</label>
+                <input type="text" id="petty-slot-1" name="petty-slot-1" placeholder="Slot 1">
+                <input type="text" id="petty-slot-2" name="petty-slot-2" placeholder="Slot 2">
+                <input type="text" id="petty-slot-3" name="petty-slot-3" placeholder="Slot 3">
+                <input type="text" id="petty-slot-4" name="petty-slot-4" placeholder="Slot 4">
+                <input type="text" id="petty-slot-5" name="petty-slot-5" placeholder="Slot 5">
+                <input type="submit" value="Submit">
+                <button id="petty-cancel-button">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="stats-dialog" class="dialog">
+        <form>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+            <div>
+
+            </div>
+            <input type="submit" value="Submit">
+            <button id="stats-cancel-button">Cancel</button>
+        </form>
+    </dialog>
+
+    <dialog id="log-dialog" class="dialog">
+        <form>
+            <label for="log-text">Log</label>
+            <textarea id="log-text"> Testing... </textarea>
+            <button id="close-log-button"> Close </button>
+        </form>
+    </dialog>
+
+    <dialog id="bonds-dialog" class="dialog">
+        <form>
+            <div>
+                <label for="bonds-slot-1">Bonds</label>
+                <input type="text" id="bonds-slot-1" name="omens-slot-1" placeholder="Slot 1">
+                <input type="text" id="bonds-slot-2" name="omens-slot-2" placeholder="Slot 2">
+                <input type="text" id="bonds-slot-3" name="omens-slot-3" placeholder="Slot 3">
+                <input type="text" id="bonds-slot-4" name="omens-slot-4" placeholder="Slot 4">
+                <input type="text" id="bonds-slot-5" name="omens-slot-5" placeholder="Slot 5">
+                <input type="submit" value="Submit">
+                <button id="bonds-cancel-button">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog id="omens-dialog" class="dialog">
+        <form>
+            <div>
+                <label for="omens-slot-1">Omens</label>
+                <input type="text" id="omens-slot-1" name="omens-slot-1" placeholder="Slot 1">
+                <input type="text" id="omens-slot-2" name="omens-slot-2" placeholder="Slot 2">
+                <input type="text" id="omens-slot-3" name="omens-slot-3" placeholder="Slot 3">
+                <input type="text" id="omens-slot-4" name="omens-slot-4" placeholder="Slot 4">
+                <input type="text" id="omens-slot-5" name="omens-slot-5" placeholder="Slot 5">
+                <input type="submit" value="Submit">
+                <button id="omens-cancel-button">Cancel</button>
+            </div>
+        </form>
+    </dialog>
+
+
 </body>
 </html>

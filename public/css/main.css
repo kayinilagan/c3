@@ -123,6 +123,24 @@ body {
     grid-row-end: 5;
 }
 
+.dialog {
+    padding: 1em;
+    max-width: 30em;
+    border: 1px solid #B0B0B0;
+    border-radius: 5px;
+}
+
+.dialog form label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+.dialog form input[type="text"] {
+    display: block;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
 .div-label {
     color: #444444;
 }
