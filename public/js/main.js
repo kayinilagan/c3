@@ -5,23 +5,26 @@ function showDialog(selector) {
     return dialog;
 }
 
-function setName() {
-    const dialog = showDialog('#name-dialog');
-    const nameSubmitButton = document.getElementById('name-submit');
-    nameSubmitButton.addEventListener('click', () => {
-        const nameInput = document.getElementById('name');
-        const nameContent = document.getElementById('name-content');
-        nameContent.innerHTML = nameInput.value;
+function setSingleAttribute(dialog, submit, input, content, cancel) {
+    const submitButton = document.getElementById(submit);
+    submitButton.addEventListener('click', () => {
+        const inputValue = document.getElementById(input).value;
+        const contentValue = document.getElementById(content);
+        contentValue.innerHTML = inputValue;
         dialog.close();
     });
-    const cancelButton = document.getElementById('name-cancel-button');
+    const cancelButton = document.getElementById(cancel);
     cancelButton.addEventListener('click', () => {
         dialog.close();
     });
 }
 
+function setName() {
+    setSingleAttribute(showDialog('#name-dialog'), 'name-submit', 'name', 'name-content', 'name-cancel');
+}
+
 function setBackground() {
-    showDialog('#background-dialog');
+    setSingleAttribute(showDialog('#background-dialog'), 'background-submit', 'background', 'background-content', 'background-cancel');
 }
 
 function setInventory() {
