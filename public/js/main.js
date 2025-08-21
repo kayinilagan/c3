@@ -1,3 +1,5 @@
+let inventory = ["", "", "", "", "", "", "", "", "", ""];
+let petty = ["", "", "", "", "", "", "", "", "", ""];
 
 function showDialog(selector) {
     const dialog = document.querySelector(selector);
@@ -19,6 +21,31 @@ function setSingleAttribute(dialog, submit, input, content, cancel) {
     });
 }
 
+function setMultiAttribute(dialog) {
+    const submitButton = dialog.querySelector('input[type="button"]');
+    submitButton.addEventListener('click', () => {
+        updateInventory();
+        dialog.close();
+    });
+    const cancelButton = dialog.querySelector('button');
+    cancelButton.addEventListener('click', () => {
+        updateInventory();
+        dialog.close();
+    });
+    inventory.forEach((item, index) => {
+        const input = dialog.querySelector(`input[id="inv-slot-${index+1}"]`);
+        input.addEventListener('change', () => {
+            console.log("Slot " + (index+1) + " changed to " + input.value);
+            inventory[index] = input.value;
+            console.log(inventory);
+        });
+    })
+}
+
+function updateInventory() {
+    console.log(inventory);
+    document.getElementById('main-grid__inventory').querySelector('.div-content').innerHTML = inventory.join(' ');
+}
 function setName() {
     setSingleAttribute(showDialog('#name-dialog'), 'name-submit', 'name', 'name-content', 'name-cancel');
 }
@@ -28,7 +55,7 @@ function setBackground() {
 }
 
 function setInventory() {
-    showDialog('#inventory-dialog');
+    setMultiAttribute(showDialog('#inventory-dialog'));
 }
 
 function setPetty() {
