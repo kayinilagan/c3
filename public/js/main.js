@@ -4,6 +4,9 @@ let petty = ["", "", "", "", "", "", "", "", "", ""];
 function showDialog(selector) {
     const dialog = document.querySelector(selector);
     dialog.showModal();
+    dialog.addEventListener("close", (event) => {
+        event.preventDefault();
+    });
     return dialog;
 }
 

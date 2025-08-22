@@ -130,12 +130,12 @@ body {
     border-radius: 5px;
 }
 
-.dialog form label {
+.dialog label {
     display: block;
     margin-bottom: 0.5em;
 }
 
-.dialog form input[type="text"] {
+.dialog input[type="text"] {
     display: block;
     padding: 0.5em;
     margin-bottom: 1em;
