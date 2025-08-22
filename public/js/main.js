@@ -7,21 +7,37 @@ function showDialog(selector) {
     return dialog;
 }
 
-function setSingleAttribute(dialog, submit, input, content, cancel) {
-    const submitButton = document.getElementById(submit);
+function setSingleAttribute(dialog){
+    const submitButton = dialog.querySelector('input[type="button"]');
     submitButton.addEventListener('click', () => {
-        const inputValue = document.getElementById(input).value;
-        const contentValue = document.getElementById(content);
-        contentValue.innerHTML = inputValue;
+        const inputValue = dialog.querySelector('input[type="text"]').value;
+        const content = document.querySelector(`#${getSubjectFromDialog(dialog.id)}-content`);
+        content.innerHTML = inputValue;
         dialog.close();
     });
-    const cancelButton = document.getElementById(cancel);
+    const cancelButton = dialog.querySelector(`#${getSubjectFromDialog(dialog.id)}-cancel`);
     cancelButton.addEventListener('click', () => {
         dialog.close();
-    });
+    })
 }
 
-function setMultiAttribute(dialog) {
+function getSubjectFromDialog(id){
+    return id.slice(0, -7);
+}
+
+function updateInventory() {
+    document.getElementById('main-grid__inventory').querySelector('.div-content').innerHTML = inventory.join(' ');
+}
+function setName() {
+    setSingleAttribute(showDialog('#name-dialog'), 'name-submit', 'name', 'name-content', 'name-cancel');
+}
+
+function setBackground() {
+    setSingleAttribute(showDialog('#background-dialog'), 'background-submit', 'background', 'background-content', 'background-cancel');
+}
+
+function setInventory() {
+    const dialog = showDialog('#inventory-dialog');
     const submitButton = dialog.querySelector('input[type="button"]');
     submitButton.addEventListener('click', () => {
         updateInventory();
@@ -35,27 +51,10 @@ function setMultiAttribute(dialog) {
     inventory.forEach((item, index) => {
         const input = dialog.querySelector(`input[id="inv-slot-${index+1}"]`);
         input.addEventListener('change', () => {
-            console.log("Slot " + (index+1) + " changed to " + input.value);
             inventory[index] = input.value;
             console.log(inventory);
         });
     })
-}
-
-function updateInventory() {
-    console.log(inventory);
-    document.getElementById('main-grid__inventory').querySelector('.div-content').innerHTML = inventory.join(' ');
-}
-function setName() {
-    setSingleAttribute(showDialog('#name-dialog'), 'name-submit', 'name', 'name-content', 'name-cancel');
-}
-
-function setBackground() {
-    setSingleAttribute(showDialog('#background-dialog'), 'background-submit', 'background', 'background-content', 'background-cancel');
-}
-
-function setInventory() {
-    setMultiAttribute(showDialog('#inventory-dialog'));
 }
 
 function setPetty() {
