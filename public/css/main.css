@@ -40,10 +40,11 @@ body {
 
 #app {
     width: 80%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -75%);
+    margin: 5% auto auto;
+    /*position: absolute;*/
+    /*top: 50%;*/
+    /*left: 50%;*/
+    /*transform: translate(-50%, -75%);*/
 }
 
 #main-grid {
@@ -123,6 +124,32 @@ body {
     grid-row-end: 5;
 }
 
+#inventory-container {
+    display: flex;
+    flex-direction: row;
+}
+
+#inv_col1 {
+    display: flex;
+    flex-direction: column;
+    margin-right: 1em;
+}
+
+#inventory-container p {
+    margin: 0 auto 1em;
+}
+#inv_col2 {
+    display: flex;
+    flex-direction: column;
+}
+
+#inventory-container input[type="checkbox"] {
+    height: 32px;
+    width: 32px;
+    margin: 0 auto 1em;
+}
+
+
 .dialog {
     padding: 1em;
     max-width: 30em;
@@ -141,6 +168,11 @@ body {
     margin-bottom: 1em;
 }
 
+.dialog button {
+    display: block;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
 .div-label {
     color: #444444;
 }

@@ -4,9 +4,6 @@ let petty = ["", "", "", "", "", "", "", "", "", ""];
 function showDialog(selector) {
     const dialog = document.querySelector(selector);
     dialog.showModal();
-    dialog.addEventListener("close", (event) => {
-        event.preventDefault();
-    });
     return dialog;
 }
 
@@ -29,7 +26,9 @@ function getSubjectFromDialog(id){
 }
 
 function updateInventory() {
-    document.getElementById('main-grid__inventory').querySelector('.div-content').innerHTML = inventory.join(' ');
+    inventory.forEach((item, index) => {
+        document.getElementById(`inv-list-${index+1}`).innerHTML = item;
+    })
 }
 function setName() {
     setSingleAttribute(showDialog('#name-dialog'), 'name-submit', 'name', 'name-content', 'name-cancel');
@@ -54,8 +53,9 @@ function setInventory() {
     inventory.forEach((item, index) => {
         const input = dialog.querySelector(`input[id="inv-slot-${index+1}"]`);
         input.addEventListener('change', () => {
-            inventory[index] = input.value;
-            console.log(inventory);
+            if (input.value.length !== 0) {
+                inventory[index] = input.value;
+            }
         });
     })
 }

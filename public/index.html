@@ -26,7 +26,18 @@
                 <div id="background-content" class="div-content"> Content </div></div>
             <div id="main-grid__inventory"  class="button-text" onclick="setInventory()">
                 <div class="div-label"> Inventory </div>
-                <div class="div-content"> Content </div>
+                <ul id="inventory-list">
+                    <li id="inv-list-1" class="inventory-list-item"></li>
+                    <li id="inv-list-2" class="inventory-list-item"></li>
+                    <li id="inv-list-3" class="inventory-list-item"></li>
+                    <li id="inv-list-4" class="inventory-list-item"></li>
+                    <li id="inv-list-5" class="inventory-list-item"></li>
+                    <li id="inv-list-6" class="inventory-list-item"></li>
+                    <li id="inv-list-7" class="inventory-list-item"></li>
+                    <li id="inv-list-8" class="inventory-list-item"></li>
+                    <li id="inv-list-9" class="inventory-list-item"></li>
+                    <li id="inv-list-10" class="inventory-list-item"></li>
+                </ul>
             </div>
             <div id="main-grid__petty"  class="button-text" onclick="setPetty()">
                 <div class="div-label"> Petty </div>
@@ -62,20 +73,36 @@
     </dialog>
 
     <dialog id="inventory-dialog" class="dialog">
-            <div>
-                <label for="inv-slot-1">Inventory</label>
-                <input type="text" id="inv-slot-1" name="inv-slot-1" placeholder="Slot 1">
-                <input type="text" id="inv-slot-2" name="inv-slot-2" placeholder="Slot 2">
-                <input type="text" id="inv-slot-3" name="inv-slot-3" placeholder="Slot 3">
-                <input type="text" id="inv-slot-4" name="inv-slot-4" placeholder="Slot 4">
-                <input type="text" id="inv-slot-5" name="inv-slot-5" placeholder="Slot 5">
-                <input type="text" id="inv-slot-6" name="inv-slot-6" placeholder="Slot 6">
-                <input type="text" id="inv-slot-7" name="inv-slot-7" placeholder="Slot 7">
-                <input type="text" id="inv-slot-8" name="inv-slot-8" placeholder="Slot 8">
-                <input type="text" id="inv-slot-9" name="inv-slot-9" placeholder="Slot 9">
-                <input type="text" id="inv-slot-10" name="inv-slot-10" placeholder="Slot 10">
-                <input id=inventory-submit" type="button" value="Submit">
-                <button id="inventory-cancel-button">Cancel</button>
+            <div id="inventory-container">
+                <div id="inv_col1">
+                    <p>Inventory</p>
+                    <input type="text" id="inv-slot-1" name="inv-slot-1" placeholder="Slot 1">
+                    <input type="text" id="inv-slot-2" name="inv-slot-2" placeholder="Slot 2">
+                    <input type="text" id="inv-slot-3" name="inv-slot-3" placeholder="Slot 3">
+                    <input type="text" id="inv-slot-4" name="inv-slot-4" placeholder="Slot 4">
+                    <input type="text" id="inv-slot-5" name="inv-slot-5" placeholder="Slot 5">
+                    <input type="text" id="inv-slot-6" name="inv-slot-6" placeholder="Slot 6">
+                    <input type="text" id="inv-slot-7" name="inv-slot-7" placeholder="Slot 7">
+                    <input type="text" id="inv-slot-8" name="inv-slot-8" placeholder="Slot 8">
+                    <input type="text" id="inv-slot-9" name="inv-slot-9" placeholder="Slot 9">
+                    <input type="text" id="inv-slot-10" name="inv-slot-10" placeholder="Slot 10">
+                    <input id=inventory-submit" type="button" value="Submit">
+                </div>
+                <div id="inv_col2">
+                    <p>Fatigue</p>
+                    <input type="checkbox" id="inv-check-1" name="inv-check-1">
+                    <input type="checkbox" id="inv-check-2" name="inv-check-2">
+                    <input type="checkbox" id="inv-check-3" name="inv-check-3">
+                    <input type="checkbox" id="inv-check-4" name="inv-check-4">
+                    <input type="checkbox" id="inv-check-5" name="inv-check-5">
+                    <input type="checkbox" id="inv-check-6" name="inv-check-6">
+                    <input type="checkbox" id="inv-check-7" name="inv-check-7">
+                    <input type="checkbox" id="inv-check-8" name="inv-check-8">
+                    <input type="checkbox" id="inv-check-9" name="inv-check-9">
+                    <input type="checkbox" id="inv-check-10" name="inv-check-10">
+                    <button id="inventory-cancel-button">Cancel</button>
+                </div>
+
             </div>
     </dialog>
 
