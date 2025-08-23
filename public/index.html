@@ -19,11 +19,11 @@
         <div id="main-grid">
             <div id="main-grid__name" class="button-text" onclick="setName()">
                 <div class="div-label" > Name </div>
-                <div id="name-content" class="div-content"> Content </div>
+                <div id="name-content" class="div-content"> </div>
             </div>
             <div id="main-grid__background"  class="button-text" onclick="setBackground()">
                 <div class="div-label"> Background </div>
-                <div id="background-content" class="div-content"> Content </div>
+                <div id="background-content" class="div-content"> </div>
             </div>
             <div id="main-grid__inventory"  class="button-text" onclick="setInventory()">
                 <div id="inventory-div" class="div-label"> Inventory </div>
@@ -42,7 +42,7 @@
             </div>
             <div id="main-grid__petty"  class="button-text" onclick="setPetty()">
                 <div id="petty-div" class="div-label"> Petty </div>
-                <ol id="petty-list">
+                <ul id="petty-list">
                     <li id="petty-list-1" class="petty-list-item"></li>
                     <li id="petty-list-2" class="petty-list-item"></li>
                     <li id="petty-list-3" class="petty-list-item"></li>
@@ -53,15 +53,66 @@
                     <li id="petty-list-8" class="petty-list-item"></li>
                     <li id="petty-list-9" class="petty-list-item"></li>
                     <li id="petty-list-10" class="petty-list-item"></li>
-                </ol>
+                </ul>
             </div>
             <div id="main-grid__traits" class="button-text" onclick="setTraits()">
                 <div class="div-label" > Traits </div>
-                <div id="traits-content" class="div-content"> Content </div>
+                <div id="traits-content" class="div-content"></div>
             </div>
             <div id="main-grid__stats"  class="button-text" onclick="setStats()">
                 <div class="div-label"> Stats </div>
-                <div class="div-content"> Content </div>
+                <div id="stats-list" class="div-content"> 
+                    <div id="stats-1">
+                        <div class="stat"> 
+                            <div class="stat-label"> HP: </div>
+                            <div class="stat-content">
+                                <span id="current-hp"> _ </span>
+                                <b>/</b>
+                                <span id="max-hp"> _ </span>
+                            </div>
+                        </div>
+                        <div class="stat"> 
+                            <div class="stat-label"> ARMOR: </div>
+                            <span id="current-armor" class="stat-content"> _ </span>
+                        </div>
+                        <div class="stat"> 
+                            <div class="stat-label"> DEPRIVED: </div>
+                            <input type="checkbox" name="deprived-check" id="deprived-check" class="stat-content" disabled>
+                        </div>
+                    </div>
+                    <div id="stats-2">
+                        <div class="stat"> 
+                            <div class="stat-label"> STR: </div>
+                            <div class="stat-content">
+                                <span id="current-str"> _ </span>
+                                <b>/</b>
+                                <span id="max-str"> _ </span>
+                            </div>
+                        </div>
+                        <div class="stat"> 
+                            <div class="stat-label"> DEX: </div>
+                            <div class="stat-content">
+                                <span id="current-dex"> _ </span>
+                                <b>/</b>
+                                <span id="max-dex"> _ </span>
+                            </div>
+                        </div>
+                        <div class="stat"> 
+                            <div class="stat-label"> WLP: </div>
+                            <div class="stat-content">
+                                <span id="current-wlp"> _ </span>
+                                <b>/</b>
+                                <span id="max-wlp"> _ </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="stats-3">
+                        <div class="stat"> 
+                            <div class="stat-label"> GOLD: </div>
+                            <span id="current-gold" class="stat-content"> _ </span>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div id="main-grid__notes"  class="button-text" onclick="setNotes()"> Notes </div>
             <div id="main-grid__activity-log"  class="button-text" onclick="seeLogs()"> Log </div>
@@ -135,16 +186,16 @@
     <dialog id="petty-dialog" class="dialog">
             <div>
                 <label for="petty-slot-1">Petty</label>
-                <input type="text" id="petty-slot-1" name="petty-slot-1" placeholder="Slot 1">
-                <input type="text" id="petty-slot-2" name="petty-slot-2" placeholder="Slot 2">
-                <input type="text" id="petty-slot-3" name="petty-slot-3" placeholder="Slot 3">
-                <input type="text" id="petty-slot-4" name="petty-slot-4" placeholder="Slot 4">
-                <input type="text" id="petty-slot-5" name="petty-slot-5" placeholder="Slot 5">
-                <input type="text" id="petty-slot-6" name="petty-slot-6" placeholder="Slot 6">
-                <input type="text" id="petty-slot-7" name="petty-slot-7" placeholder="Slot 7">
-                <input type="text" id="petty-slot-8" name="petty-slot-8" placeholder="Slot 8">
-                <input type="text" id="petty-slot-9" name="petty-slot-9" placeholder="Slot 9">
-                <input type="text" id="petty-slot-10" name="petty-slot-10" placeholder="Slot 10">
+                <input type="text" id="petty-slot-1" name="petty-slot-1" placeholder="Line 1">
+                <input type="text" id="petty-slot-2" name="petty-slot-2" placeholder="Line 2">
+                <input type="text" id="petty-slot-3" name="petty-slot-3" placeholder="Line 3">
+                <input type="text" id="petty-slot-4" name="petty-slot-4" placeholder="Line 4">
+                <input type="text" id="petty-slot-5" name="petty-slot-5" placeholder="Line 5">
+                <input type="text" id="petty-slot-6" name="petty-slot-6" placeholder="Line 6">
+                <input type="text" id="petty-slot-7" name="petty-slot-7" placeholder="Line 7">
+                <input type="text" id="petty-slot-8" name="petty-slot-8" placeholder="Line 8">
+                <input type="text" id="petty-slot-9" name="petty-slot-9" placeholder="Line 9">
+                <input type="text" id="petty-slot-10" name="petty-slot-10" placeholder="Line 10">
                 <input type="button" value="Submit">
                 <button id="petty-cancel-button">Cancel</button>
             </div>
@@ -160,7 +211,7 @@
             <div>
 
             </div>
-            <input type="submit" value="Submit">
+            <input type="button" value="Submit">
             <button id="stats-cancel-button">Cancel</button>
     </dialog>
 
@@ -178,7 +229,7 @@
                 <input type="text" id="bonds-slot-3" name="omens-slot-3" placeholder="Slot 3">
                 <input type="text" id="bonds-slot-4" name="omens-slot-4" placeholder="Slot 4">
                 <input type="text" id="bonds-slot-5" name="omens-slot-5" placeholder="Slot 5">
-                <input type="submit" value="Submit">
+                <input type="button" value="Submit">
                 <button id="bonds-cancel-button">Cancel</button>
             </div>
     </dialog>
@@ -191,7 +242,7 @@
                 <input type="text" id="omens-slot-3" name="omens-slot-3" placeholder="Slot 3">
                 <input type="text" id="omens-slot-4" name="omens-slot-4" placeholder="Slot 4">
                 <input type="text" id="omens-slot-5" name="omens-slot-5" placeholder="Slot 5">
-                <input type="submit" value="Submit">
+                <input type="button" value="Submit">
                 <button id="omens-cancel-button">Cancel</button>
             </div>
     </dialog>

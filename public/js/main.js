@@ -73,10 +73,11 @@ function setInventory() {
         const fatigueState = dialog.querySelector(`input[id="inv-check-${index+1}"]`);
         fatigueState.addEventListener('change', () => {
             if (fatigueState.checked) {
-                inventory[index] = `<p class="invalid">${inventory[index]}</p>`;
+                inventory[index] = `<span class="invalid">${inventory[index]}</span>`;
                 input.disabled = true;
                 input.classList.add('invalid');
             } else {
+                inventory[index] = input.value
                 input.disabled = false;
                 input.classList.remove('invalid');
             }
