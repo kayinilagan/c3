@@ -30,6 +30,13 @@ function updateInventory() {
         document.getElementById(`inv-list-${index+1}`).innerHTML = item;
     })
 }
+
+function updatePetty(){
+    petty.forEach((item, index) => {
+        document.getElementById(`petty-list-${index+1}`).innerHTML = item;
+    })
+}
+
 function setName() {
     setSingleAttribute(showDialog('#name-dialog'), 'name-submit', 'name', 'name-content', 'name-cancel');
 }
@@ -46,7 +53,9 @@ function setInventory() {
         dialog.close();
     });
     const cancelButton = dialog.querySelector('button');
+    const inventorySnapshot = inventory.slice();
     cancelButton.addEventListener('click', () => {
+        inventory = inventorySnapshot.slice();
         updateInventory();
         dialog.close();
     });
@@ -57,11 +66,39 @@ function setInventory() {
                 inventory[index] = input.value;
             }
         });
+        const fatigueState = dialog.querySelector(`input[id="inv-check-${index+1}"]`);
+        fatigueState.addEventListener('change', () => {
+            if (fatigueState.checked) {
+                inventory[index] = `<s>${inventory[index]}</s>`;
+            } else {
+                inventory[index] = input.value;
+            }
+        })
     })
 }
 
 function setPetty() {
-    showDialog('#petty-dialog');
+    const dialog = showDialog('#petty-dialog');
+    const submitButton = dialog.querySelector('input[type="button"]');
+    submitButton.addEventListener('click', () => {
+        updatePetty();
+        dialog.close();
+    });
+    const cancelButton = dialog.querySelector('button');
+    const pettySnapshot = petty.slice();
+    cancelButton.addEventListener('click', () => {
+        petty = pettySnapshot.slice();
+        updatePetty();
+        dialog.close();
+    });
+    petty.forEach((item, index) => {
+        const input = dialog.querySelector(`input[id="petty-slot-${index+1}"]`);
+        input.addEventListener('change', () => {
+            if (input.value.length !== 0){
+                petty[index] = input.value;
+            }
+        })
+    });
 }
 
 function setStats() {
