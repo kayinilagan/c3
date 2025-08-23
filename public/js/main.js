@@ -38,11 +38,15 @@ function updatePetty(){
 }
 
 function setName() {
-    setSingleAttribute(showDialog('#name-dialog'), 'name-submit', 'name', 'name-content', 'name-cancel');
+    setSingleAttribute(showDialog('#name-dialog'));
 }
 
 function setBackground() {
-    setSingleAttribute(showDialog('#background-dialog'), 'background-submit', 'background', 'background-content', 'background-cancel');
+    setSingleAttribute(showDialog('#background-dialog'));
+}
+
+function setTraits(){
+    setSingleAttribute(showDialog('#traits-dialog'));
 }
 
 function setInventory() {
@@ -69,9 +73,12 @@ function setInventory() {
         const fatigueState = dialog.querySelector(`input[id="inv-check-${index+1}"]`);
         fatigueState.addEventListener('change', () => {
             if (fatigueState.checked) {
-                inventory[index] = `<s>${inventory[index]}</s>`;
+                inventory[index] = `<p class="invalid">${inventory[index]}</p>`;
+                input.disabled = true;
+                input.classList.add('invalid');
             } else {
-                inventory[index] = input.value;
+                input.disabled = false;
+                input.classList.remove('invalid');
             }
         })
     })
